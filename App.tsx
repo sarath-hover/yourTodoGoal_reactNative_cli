@@ -1,34 +1,32 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
+
 import React from 'react';
-import {Button, StyleSheet, TextInput, View} from 'react-native';
+import {SafeAreaView, StatusBar, StyleSheet, View} from 'react-native';
+import Apps from './Componenets/Apps';
 
-function App() {
+const App = () => {
   return (
-    <View style={styles.appContainer}>
-      <View style={styles.inputContainer}>
-        <TextInput style={styles.textInput} placeholder="Your Course Goal!" />
-        <Button title="Add Goal" />
-      </View>
-      <View></View>
-    </View>
+    <>
+      <SafeAreaView style={styles.safeArea}>
+        <StatusBar translucent />
+        <View style={{flex: 1}}>
+          <Apps />
+        </View>
+      </SafeAreaView>
+    </>
   );
-}
-
-const styles = StyleSheet.create({
-  appContainer: {
-    padding: 50,
-    paddingHorizontal: 16,
-  },
-  inputContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  textInput: {
-    borderWidth: 1,
-    borderColor: '#cccccc',
-    width: '70%',
-    marginRight: 8,
-    padding: 8,
-  },
-});
+};
 
 export default App;
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
+});
